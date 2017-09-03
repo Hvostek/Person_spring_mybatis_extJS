@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.loiane.model.Person">
+
+	<update id="createTable">
+		CREATE TABLE personalinfo
+		(
+		id integer NOT NULL,
+		name
+		character(20),
+		surname character(20),
+		email character(20),
+		telephonenumber character(20),
+		personaldata character(20),
+		personalid
+		character(20))
+	</update>
+
+	<insert id="insertIntoDB">
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber, personaldata, personalid) VALUES (1, 'user', 'one',
+		'user1@yourdomain.com', '8911111111', '111111 01/01/1901',
+		'ID11111111');
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber,
+		personaldata, personalid) VALUES (2, 'user2', 'two',
+		'user2@yourdomain.com', '89222222222', '222222 02/02/1901',
+		'ID22222222');
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber,
+		personaldata, personalid) VALUES (3, 'user3', 'three',
+		'user3@yourdomain.com', '8933333333', '333333 03/03/1901',
+		'ID33333333');
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber,
+		personaldata, personalid) VALUES (4, 'user4', 'four',
+		'user4@yourdomain.com', '89444444444', '444444 04/04/1901',
+		'ID44444444');
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber,
+		personaldata, personalid) VALUES (5, 'user5', 'five',
+		'user5@yourdomain.com', '8955555555', '555555 05/05/1901',
+		'ID55555555');
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber,
+		personaldata, personalid) VALUES (6, 'user6', 'six',
+		'user6@yourdomain.com', '8966666666', '666666 06/06/1901',
+		'ID66666666');
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber,
+		personaldata, personalid) VALUES (7, 'user7', 'seven',
+		'user7@yourdomain.com', '8977777777', '777777 07/07/1901',
+		'ID77777777');
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber,
+		personaldata, personalid) VALUES (8, 'user8', 'eight',
+		'user8@yourdomain.com', '8988888888', '888888 08/08/1901',
+		'ID88888888');
+		INSERT INTO personalinfo(id, name, surname, email,
+		telephonenumber,
+		personaldata, personalid) VALUES (9, 'user9', 'nine',
+		'user9@yourdomain.com', '8999999999', '999999 09/09/1901',
+		'ID99999999');
+	</insert>
+
+	<select id="selectPerson" resultType="com.loiane.model.Person">
+		select * from
+		personalinfo where id = #{id}
+	</select>
+
+	<select id="selectAllPersons" resultType="com.loiane.model.Person">
+		select * from
+		personalinfo
+	</select>
+
+	<insert id="insertPerson">
+		insert into personalinfo (id, name, surname, email,
+		telephoneNumber,
+		personalData, personalID)
+		values
+		(#{id},#{name},#{surname},#{email},#{telephoneNumber},#{personalData},#{personalID})
+	</insert>
+
+	<delete id="deletePerson">
+		delete from personalinfo where id = #{id}
+	</delete>
+
+	<update id="updatePerson" parameterType="com.loiane.model.Person"
+		flushCache="true" statementType="PREPARED" timeout="20">
+		update
+		personalinfo set
+		id = #{id},
+		name = #{name},
+		surname= #{surname},
+		email= #{ email},
+		telephoneNumber= #{telephoneNumber},
+		personalData=#{personalData},
+		personalID= #{personalID}
+		where id =#{id}
+	</update>
+
+
+</mapper>

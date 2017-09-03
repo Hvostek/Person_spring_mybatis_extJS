@@ -1,0 +1,16 @@
+# Project Title
+Project on interaction of several technologies(SpringMVC+MyBatis+ExtJS)
+
+## Getting Started
+Clone or download project on your PC.
+
+### Installing
+1. Download the project.
+2. Config mybatis-config.xml under your DB(DB path, login, password etc).
+3. Run project source under your server(TomCat, Jetty, etc).
+
+## Built With
+* [ECLIPSE](https://eclipse.org/home/index.php)
+* [SpringMVC](https://spring.io/)
+* [Maven](https://maven.apache.org/)
+* [MyBatis](http://www.mybatis.org/spring/index.html)
